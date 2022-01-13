@@ -1,0 +1,45 @@
+
+<%= form_with(model: employee) do |form| %>
+  <% if employee.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
+
+      <ul>
+        <% employee.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="container";>
+  <div>
+    <label style: "display: block"> Employee ID </label>
+    <br>
+    <%= form.number_field :eno,:required=>true %>
+  </div>
+
+  <div>
+    <%= form.label :Name, style: "display: block" %>
+    <%= form.text_field :ename,:required=>true %>
+  </div>
+
+  <div>
+    <%= form.label :Age, style: "display: block" %>
+    <%= form.number_field :age,:required=>true %>
+  </div>
+
+  <div>
+    <%= form.label :Gender, style: "display: block" %>
+    <%= form.text_field :gender,:required=>true %>
+  </div>
+
+  <div>
+    <%= form.label :Designation, style: "display: block" %>
+    <%= form.text_field :designation,:required=>true %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+</div>
+<% end %>

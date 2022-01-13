@@ -1,0 +1,48 @@
+
+<h2 style=color:Indigo; align = "center">Employee Credentials Management System</h2>
+  <br> <br>
+  <form1>
+    <div id="employees" align="right">
+      <strong>
+        <%= link_to "Create New Employee", new_employee_path %>
+      </strong>
+      &nbsp &nbsp &nbsp &nbsp
+    </div>
+  </form1>
+<br><br>
+<div id="employees">
+
+<table style = width:65%;height:50px; align="center">
+  <tr style = height:50px>
+    <th style = width:20% align = "left">
+        <strong>Employee ID</strong>
+    </th>
+    <th style = width:40% align="left">
+        <strong>Employee Name</strong>
+    </th>
+    <th style = width:40% align = "left">
+        <strong>Designation</strong>
+    </th>
+  </tr>
+</table>
+<div>
+      <% @employees.each do |employee| %>
+            <%= render employee %>
+            <table style = width:65%;height:50px; class="container"; align="center" >
+                <tr style = height:50px;  >
+                  <td align= style = width:20%>
+                    <strong>
+                    <%=  link_to employee.eno, employee %>
+                    </strong>
+                  </td>
+                  <td style = width:40%;>
+                     <%= employee.ename %>
+                  </td>
+                  <td style = width:40%;>
+                    <%= employee.designation %>
+                  </td>
+                </tr>
+            </table>
+            <br><br>
+      <% end %>
+</div>

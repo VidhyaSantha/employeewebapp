@@ -1,0 +1,44 @@
+<p style="color: indigo"><%= notice %></p>
+<br> <br>
+<div align="right">
+     <%= link_to "Back to HomePage", employees_path %>  |
+     <%= link_to "Update Employee", edit_employee_path(@employee) %>
+     &nbsp &nbsp &nbsp
+</div>
+<br> <br>
+
+    <%= render @employee %>
+
+<div class="container">
+  <div id="employees">
+    <p>
+      <strong>EmployeeID:</strong>
+        <%= @employee.eno %>
+    </p>
+
+    <p>
+      <strong>Name:</strong>
+      <%= @employee.ename %>
+    </p>
+
+    <p>
+      <strong>Age:</strong>
+      <%= @employee.age %>
+    </p>
+
+    <p>
+      <strong>Gender:</strong>
+       <%= @employee.gender %>
+    </p>
+
+    <p>
+      <strong>Designation:</strong>
+      <%= @employee.designation %>
+    </p>
+
+  </div>
+</div>
+<br>
+<div align="right">
+ <%= button_to "Delete Employee", @employee, method: :delete %>
+</div>

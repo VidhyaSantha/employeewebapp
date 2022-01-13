@@ -1,0 +1,11 @@
+<h2 style=color:indigo>Update Employee details</h2>
+
+<div align="right">
+  <%= link_to "Back to HomePage", employees_path %>  |
+  <%= link_to "Show Employee", @employee %>
+  &nbsp &nbsp &nbsp
+</div>
+<br>
+<div>
+<%= render "form", employee: @employee %>
+</div>
